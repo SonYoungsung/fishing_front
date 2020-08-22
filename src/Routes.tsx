@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import { Route, Switch, BrowserRouter, Redirect } from "react-router-dom";
+import { Row, Col, Divider } from "antd";
 
 import Signin from "./Routers/Signin";
 import Main from "./Routers/Main";
 import CreateSale from "./Routers/Sale/CreateSale";
+import Sidebar from "./Components/Sidebar"
 
 const AppRouter = () => {
   console.log("");
@@ -25,4 +27,17 @@ const AppRouter = () => {
   );
 };
 
-export default AppRouter;
+export default function () {
+  return(
+    <>
+    <Row>
+      <Col span={6}>
+        <Sidebar></Sidebar>
+      </Col>
+      <Col span={18}>
+        <AppRouter></AppRouter>
+      </Col>
+    </Row>
+    </>
+  )
+};
