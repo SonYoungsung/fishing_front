@@ -1,6 +1,7 @@
 import { auth } from "./config";
 import { toast } from "react-toastify";
 import firebase from "firebase";
+import { FieldNamesType } from "antd/lib/cascader";
 
 export const currentUser = (setLogin: any) => {
   auth.onAuthStateChanged((user) => {
